@@ -27,4 +27,4 @@ Examples:
 Todos
 -----
 * Generate CSR
-* Let's Encrypted?
+* Let's Encrypt?
