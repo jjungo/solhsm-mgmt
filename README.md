@@ -1,8 +1,7 @@
-solhsm-mgmt
-===========
+# solhsm-mgmt
+This is the key management tool for the solhsm-core.
 
-Requirement
------------
+## Requirement
 
     python3
     python3-pip
@@ -10,19 +9,20 @@ Requirement
     sqlite3
     Pycrypto
 
-How to use
-----------
+## How to use
 
-You should place solhsm-mgmt.py in /usr/bin
+### Install
 
-    sudo cp solhsm-mgmt.py /usr/bin/
+    chmod +x install.sh
+    ./install.sh
+
+### Run
 
 Examples:
 
     solhsm-mgmt.py -h
     sudo solhsm-mgmt.py genkey --rsa --size 1024 --label foo
     solhsm-mgmt.py key --view --id 1
-
 
 Todos
 -----
