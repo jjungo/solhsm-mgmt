@@ -29,14 +29,14 @@ check_dep() {
 
         if [[ $CONFIRM = "Y" || $CONFIRM = "y" || $CONFIRM = "" ]]; then
             if which apt-get &> /dev/null; then
-                apt-get update
-                apt-get install -y $INSTALL
-                pip3 install pycrypto
+                sudo apt-get update
+                sudo apt-get install -y $INSTALL
+                sudo pip3 install pycrypto
 
             elif which pacman &> /dev/null; then
                 echo will install $INSTALL
-                pacman -Sy $INSTALL
-                pip install pycrypto
+                sudo pacman -Sy $INSTALL
+                sudo pip install pycrypto
 
             else 
                 echo "NO package manager is found for your distribution, please install mannualy $INSTALL"
@@ -48,17 +48,13 @@ check_dep() {
 
 install_mgmt(){
     cd ./lib/
-    python3 setup.py install
+    sudo python3 setup.py install
     cd ..
-    cp solhsm-mgmt.py /usr/bin/
-    chmod +x /usr/bin/solhsm-mgmt.py
-    mkdir -p /data/db
+    sudo cp solhsm-mgmt.py /usr/bin/
+    sudo chmod +x /usr/bin/solhsm-mgmt.py
+    sudo mkdir -p /data/db
 }
 
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run as root"
-else
-    check_dep
-    install_mgmt
-fi
+check_dep
+install_mgmt
 
