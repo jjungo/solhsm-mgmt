@@ -35,7 +35,12 @@ database is located at /data/db/key.db
 In order to forge the dummy key we had hardcoded d,p,q parameters, see
 [well know security issues](https://github.com/jjungo/solhsm-core/wiki/Well-know-security-issues).
 
+## Generate your Certificate Signing Sequest (CSR)
+The actually method for generate a CSR is rough because you need to open the
+database and get the private key manual in order to create your CSR. We're working
+on simplify this step.
+
 Todos
 -----
-* Generate CSR
+* Generate CSR feature
 * Let's Encrypt?
