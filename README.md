@@ -1,7 +1,7 @@
 # solhsm-mgmt
 This is the key management tool for the solhsm-core.
 
-## Requirement
+## Requirements
 
     python3
     python3-pip
@@ -9,7 +9,7 @@ This is the key management tool for the solhsm-core.
     sqlite3
     Pycrypto
 
-Theses packages can be installed by the install_dep.sh script, just run it.
+These packages can be installed by the install_dep.sh script, just run it.
 
 ## How to use
 
@@ -29,16 +29,16 @@ Examples:
 ## Internal stuff
 
 PySql library allows user to access to key.db sqlite3 database. This
-library provide accesser and getter methods in order to interact with db. The
+library provides setter and getter methods in order to interact with db. The
 database is located at /data/db/key.db
 
 In order to forge the dummy key we had hardcoded d,p,q parameters, see
 [well know security issues](https://github.com/jjungo/solhsm-core/wiki/Well-know-security-issues).
 
 ## Generate your Certificate Signing Sequest (CSR)
-The actually method for generate a CSR is rough because you need to open the
+The current method for generating a CSR is rough because you need to open the
 database and get the private key manual in order to create your CSR. We're working
-on simplify this step.
+on simplifying this step.
 
 Todos
 -----
